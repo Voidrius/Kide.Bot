@@ -1,6 +1,6 @@
 # Kide.App.Bot usage
 
-1. Download [KideBot.ps1](https://gitlab.labranet.jamk.fi/AA3739/kide.app.bot/-/raw/main/KideBot.ps1?inline=false) and [key.txt](https://gitlab.labranet.jamk.fi/AA3739/kide.app.bot/-/raw/main/key.txt?inline=false)
+1. Download [KideBot.ps1](https://gitlab.labranet.jamk.fi/AA3739/kide.app.bot-public/-/raw/main/KideBot.ps1?inline=false) and [key.txt](https://gitlab.labranet.jamk.fi/AA3739/kide.app.bot-public/-/raw/main/key.txt?inline=false)
 2. Place them in the same folder
 3. Paste your bearer token in key.txt, be sure to remove any leftover <> or ""
 4. Run KideBot.ps1 with PowerShell (Right-click > Run with PowerShell. Obviously this requires an installation of PowerShell)
