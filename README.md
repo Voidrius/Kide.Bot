@@ -23,7 +23,7 @@ Start from the [kide.app](https://kide.app/) site.
 
 1. The script runs to completion, but the tickets aren't added to my cart?
 - Most likely caused by an incorrect bearer token. Ensure there are no "" or <> left in your key.txt file.
-- Also ensure that your folder structure looks something like this:
+- Also ensure that your folder structure looks something like this.
 ![kansio](/ohjekuvat/kansio.png)
 2. The script abrubtly shuts itself down when I try to run it?
 - This only happens when you havent entered your bearer token into the key.txt, refer to How do I find my bearer token above.
