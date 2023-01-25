@@ -16,14 +16,14 @@ $eventKey = $eventKey.Split('/')[4]
 $requestLink = "https://api.kide.app/api/products/" + $eventKey
 	
 # Finds the events data with a http request, and formats into a ps.object for easy access of data
-$getData = Invoke-WebRequest -Uri $requestLink | ConvertFrom-Json | ConvertTo-Json -depth 100
-$jsonObject = $getData | ConvertFrom-Json
+$getData = Invoke-WebRequest -Uri $requestLink -UseBasicParsing | ConvertFrom-Json | ConvertTo-Json -depth 100
+$ticketData = $getData | ConvertFrom-Json
 
 # Formats POST request parameters in advance
 $target = "https://api.kide.app/api/reservations"
 $header = @{"authorization" = "Bearer $userKey"}
 	
-$purchaseTime = Get-Date $jsonObject.model.product.dateSalesFrom
+$purchaseTime = Get-Date $ticketData.model.product.dateSalesFrom
 
 # Old timer
 # Do {
@@ -53,23 +53,23 @@ Do {
   # Starts looping this until the ticket data is available.
   # Fetches ticket data and stores it into a hashtable, also checks for when the tickets become available
   $ProgressPreference = "silentlyContinue"
-  $getData2 = Invoke-WebRequest -Uri $requestLink | ConvertFrom-Json | ConvertTo-Json -depth 100
-  $jsonObject = $getData2 | ConvertFrom-Json
-  $ticketState = $jsonObject.model.variants.Count
+  $getData2 = Invoke-WebRequest -Uri $requestLink -UseBasicParsing | ConvertFrom-Json | ConvertTo-Json -depth 100
+  $ticketData = $getData2 | ConvertFrom-Json
+  $ticketState = $ticketData.model.variants.Count
   
 } until ($ticketState -ne 0)
 
-$i = $jsonObject.model.variants.Count
+$i = $ticketData.model.variants.Count
 $i--
 
 # Core of the script
 Do {
 	
   # This part loops through all the tickets and gets their ID and maximum reservable count
-	$jasenyyscheck = $jsonObject.model.variants[$i].accessControlMemberships[$i].ID
-  $inventoryId = $jsonObject.model.variants[$i].inventoryId
-  $max = $jsonObject.model.variants[$i].productVariantMaximumReservableQuantity
-  $available = $jsonObject.model.variants[$i].availability
+	$jasenyyscheck = $ticketData.model.variants[$i].accessControlMemberships[$i].ID
+  $inventoryId = $ticketData.model.variants[$i].inventoryId
+  $max = $ticketData.model.variants[$i].productVariantMaximumReservableQuantity
+  $available = $ticketData.model.variants[$i].availability
   
   If ($max -gt $available) {
     If ($available -eq 0 ) {
