@@ -1,4 +1,4 @@
-# Kide.App.Bot usage
+# Kide.Bot usage
 
 1. Download [Kide.App.Bot.ps1](https://gitlab.labranet.jamk.fi/AA3739/kide.app.bot-public/-/raw/main/Kide.App.Bot.ps1?inline=false) and [key.txt](https://gitlab.labranet.jamk.fi/AA3739/kide.app.bot-public/-/raw/main/key.txt?inline=false)
 2. Place them in the same folder
