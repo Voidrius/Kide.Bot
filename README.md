@@ -1,11 +1,11 @@
 # Kide.Bot usage
 
-1. Download [Kide.App.Bot.ps1](https://gitlab.labranet.jamk.fi/AA3739/kide.app.bot-public/-/raw/main/Kide.App.Bot.ps1?inline=false) and [key.txt](https://gitlab.labranet.jamk.fi/AA3739/kide.app.bot-public/-/raw/main/key.txt?inline=false)
-2. Place them in the same folder
+1. Download the [latest release](https://github.com/Voidrius/Kide.Bot/releases/latest)
+2. Extract the folder out of the .zip file
 3. Paste your bearer token in key.txt, be sure to remove any leftover <> or ""
-4. Run KideBot.ps1 with PowerShell (Right-click > Run with PowerShell. Obviously this requires an installation of PowerShell)
+4. Run Kide.Bot.ps1 with PowerShell (Right-click > Run with PowerShell. Obviously this requires an installation of PowerShell)
 5. If the sales for your event haven't started, the bot waits until the moment they start.
-6. After the sales have started, it will reserve the maximum amount of each different type of ticket possible.
+6. After the sales have started, it will reserve the maximum amount of each different type of ticket possible, while prioritizing the users input choices.
 7. After a refresh, the tickets should be in your shopping cart!
 
 ## How do I find my bearer token?
