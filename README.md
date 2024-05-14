@@ -1,4 +1,4 @@
-# Kide.Bot?
+# Kide.Bot (OUTDATED, NOT MAINTAINED. See any other Google search result for alternatives.)
 ### Kide.Bot is a powershell script that snatches tickets from kide.api as soon as they are available, and according to the users prompts.
 ### The code is messy, but highly functioning! As of v1.0.1, you can enter a keyword, and the bot will prioritize tickets with that name.
 ### You can also prioritize organization tickets, if that's what you're into.
